@@ -25,6 +25,11 @@ Horizon of the MandelBrot
 
 
 # Compiling on Linux:
+As Always here is my configuration of GLAD for this project (OpenGL3.3)
+
+https://glad.dav1d.de/#language=c&specification=gl&api=gl%3D3.3&api=gles1%3Dnone&api=gles2%3Dnone&api=glsc2%3Dnone&profile=core&loader=on
+
+Put glad.c and .h directly in the glad folder as well as KHR
 
 To Compile the program simply write the command specified below in your terminal
 
