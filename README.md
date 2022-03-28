@@ -3,12 +3,13 @@ A simple project that will let you explore the mandelbrot set.
 
 # Pictures:
 The full MandelBrot:
+
 ![image](https://user-images.githubusercontent.com/62178977/160417535-c5a373f2-c9f4-43cd-8466-29fde3e1a13f.png)
 
-Fun Spirals
+Neat Shapes
 ![image](https://user-images.githubusercontent.com/62178977/160417958-90e22612-8921-417b-b978-32b63ae62e54.png)
 
-Neat Shapes
+Fun Spirals
 ![image](https://user-images.githubusercontent.com/62178977/160418187-53ab9526-6bb8-4d84-84f4-67eb1856308b.png)
 
 Horizon of the MandelBrot
