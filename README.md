@@ -28,10 +28,10 @@ Horizon of the MandelBrot
 
 ## dependencies:
 
-> openGL 4.0
-> glfw3 (libglfw3-dev on debian/ubuntu)
-> make
-> glad(included)
+* openGL 4.0
+* glfw3 (libglfw3-dev on debian/ubuntu)
+* make
+* glad(included)
 
 ## running:
 
