@@ -95,6 +95,14 @@ public:
     {
         glUniform2f(glGetUniformLocation(ID, name.c_str()), value1,value2);
     }
+    void setDouble(const std::string &name, double value) const
+    {
+        glUniform1d(glGetUniformLocation(ID, name.c_str()), value);
+    }
+    void setDouble2(const std::string &name, double value1,double value2) const
+    {
+        glUniform2d(glGetUniformLocation(ID, name.c_str()), value1,value2);
+    }
 
 private:
     // utility function for checking shader compilation/linking errors.

@@ -25,12 +25,24 @@ Horizon of the MandelBrot
 
 
 # Compiling on Linux:
-As Always here is my configuration of GLAD for this project (OpenGL3.3)
 
-https://glad.dav1d.de/#language=c&specification=gl&api=gl%3D3.3&api=gles1%3Dnone&api=gles2%3Dnone&api=glsc2%3Dnone&profile=core&loader=on
+## dependencies:
 
-Put glad.c and .h directly in the glad folder as well as KHR
+> openGL 4.0
+> glfw3 (libglfw3-dev on debian/ubuntu)
+> make
+> glad(included)
+
+## running:
 
 To Compile the program simply write the command specified below in your terminal
 
-> g++ main.cpp glad/glad.c -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl -o MandelBrotSetExplorer
+> make
+
+It will launch the executable automatically.
+you can pass one argument to the executable: the iteration count.
+The higher it is the more precise the mandelbrot will be,
+by default this value is set to 500.
+you can change it to 1500 iterations by running:
+
+> ./MandelBrotSetExplorer 1500

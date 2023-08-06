@@ -2,6 +2,7 @@
 #include "glad/khrplatform.h"
 #include <GLFW/glfw3.h>
 #include "shader.h"
+#include <cstdio>
 #include <iostream>
 #include <math.h>
 
@@ -13,10 +14,20 @@ void cursor_callback(GLFWwindow* window,double xPos, double yPos);
 // settings
 int SCR_WIDTH = 800;
 int SCR_HEIGHT = 600;
-float zoom = 1; double lastCX, lastCY,camX,camY;
+double zoom = 1; double lastCX, lastCY,camX,camY;
 
-int main()
+int main(int argc,char ** argv)
 {
+    int iterations = 500;
+    if(argc <= 1)printf("no arguments, iteration count set to %d\n",iterations);
+    if(argc == 2){
+        iterations = atoi(argv[1]);
+        if(iterations <= 0){fprintf(stderr,"positive integer expected!\n");return -1;}
+        if(iterations >= 2000){fprintf(stderr,"it's kinda pointless after 2000 but on you go!\n");}
+        printf("iteration count set to %d\n",iterations);
+    }
+    if(argc > 2){fprintf(stderr,"too many arguments aborting...\n");return -1;}
+    
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
@@ -87,9 +98,10 @@ int main()
         glfwSetScrollCallback(window, scroll_callback);
         glfwSetCursorPosCallback(window, cursor_callback);
         MandelBrot.setFloat("Time",glfwGetTime());
-        MandelBrot.setFloat("zoom",(zoom));
-        MandelBrot.setFloat("ScrRatio",float(SCR_WIDTH)/float(SCR_HEIGHT));
-        MandelBrot.setFloat2("camera",camX,camY);
+        MandelBrot.setDouble("zoom",(zoom));
+        MandelBrot.setInt("iterations",iterations);
+        MandelBrot.setDouble("ScrRatio",double(SCR_WIDTH)/double(SCR_HEIGHT));
+        MandelBrot.setDouble2("camera",camX,camY);
 
         // render
         // ------
